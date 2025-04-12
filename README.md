@@ -29,6 +29,19 @@ docker login
 
 Then, build and push the image to Docker Hub.
 
+#### Nightly Version
+
+```bash
+docker buildx create --use
+
+docker buildx build --platform linux/amd64,linux/arm64 \
+  --build-arg TARGET_N8N_VERSION=nightly \
+  -t saltchang/custom-n8n:nightly \
+  --push .
+```
+
+#### Latest Version (1.87.2)
+
 ```bash
 docker buildx create --use
 
